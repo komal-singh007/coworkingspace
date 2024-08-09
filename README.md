@@ -92,8 +92,6 @@ docker build -t test-coworking-analytics .
 
 
 ## CloudWatch Logging (README)
-
-
 Set up CloudWatch logging using the Container Insights feature. Refer to the Operationalizing Kubernetes lesson for setup instructions. Screenshots demonstrating successful setup are expected. 
 
 
