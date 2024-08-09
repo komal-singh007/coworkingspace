@@ -4,8 +4,8 @@ metadata:
   name: myconfigmap
 data:
   DB_USERNAME: myuser
-  DB_HOST: 127.0.0.1
-  DB_PORT: "5433"
+  DB_HOST: postgresql-service.default.svc.cluster.local
+  DB_PORT: "5432"
   DB_NAME: mydatabase
 ---
 apiVersion: v1
@@ -14,7 +14,7 @@ metadata:
   name: mysecret
 type: Opaque
 data:
-  DB_PASSWORD: bXlwYXNzd29yZAo=
+  DB_PASSWORD: bXlwYXNzd29yZA==
 ---
 apiVersion: v1
 kind: Service
@@ -48,7 +48,7 @@ spec:
     spec:
       containers:
       - name: coworking
-        image: 247005513441.dkr.ecr.us-east-1.amazonaws.com/microservices123:13
+        image: komalsingh000/coworking-space:9
         imagePullPolicy: IfNotPresent
         livenessProbe:
           httpGet:
